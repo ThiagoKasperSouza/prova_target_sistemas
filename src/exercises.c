@@ -79,7 +79,7 @@ void find_min_max_mean(double *arr) {
 void inverter_s() {
    char s[MAX_WORD_SIZE];
    printf("Escreva uma palavra de ate %d caracteres: ", MAX_WORD_SIZE );
-   scanf("%s", s);
+   scanf("%s%*c", s);
    /*ponteiros que percorrem o array de char (string)*/
    int pont_fim = strlen(s) - 1; // remove o /0
    int pont_ini = 0;
@@ -189,14 +189,15 @@ int parse_json() {
 
 
 void parse_xml_or_json() {
-   int opt = 0;
+   char opt;
    do {
       printf("\nOpcoes disponiveis: \n");
       printf("\n1 - Ler XML\n");
       printf("2 - Ler JSON\n");
       printf("Ecolha uma opcao: ");
-      scanf("%d", &opt);
-      switch(opt) {
+      scanf("%s%*c", &opt);
+      int op = atoi(&opt);
+      switch(op) {
          case 1:
             parse_xml();
          break;
