@@ -1,5 +1,6 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include <json-c/json.h>
 #include "./stack.c"
 #include "./math_utils.c"
 #include "../lib/State.h"
@@ -159,6 +160,32 @@ int parse_xml() {
    return 0;
 }
 
+/*
+https://json-c.github.io/json-c/json-c-0.14/doc/html/md_README.html
+*/
+int parse_json() {
+   State *st = malloc(STACK_SIZE * sizeof(State));
+   double soma = 0.0;
+   json_object *root = json_object_from_file("medias_mensais.json");
+   json_object *states = json_object_object_get(root, "medias");
+
+   if (json_object_is_type(states, json_type_array)) {
+
+      int len = json_object_array_length(states);
+      for (int i = 0; i < len; i++) {
+         json_object *state = json_object_array_get_idx(states, i);
+         const char* name = json_object_get_string(json_object_object_get(state, "state_name"));
+         st[i].value = json_object_get_double(json_object_object_get(state, "value"));
+         st[i].name = (char*)name;
+         soma += st[i].value;
+      }
+   }
+   printf("Respectiva porcentagem de cada estado perante montante total: \n\n");
+   for(int i=0; i < STACK_SIZE; i++) {
+      st[i].percentage = regra_de_tres(st[i].value, soma);
+      printf("[%d] %s: R$ %.2f --> %d%% do total;\n",st[i].id +1, st[i].name,st[i].value, st[i].percentage);
+   }
+}
 
 
 void parse_xml_or_json() {
@@ -167,13 +194,14 @@ void parse_xml_or_json() {
       printf("\nOpcoes disponiveis: \n");
       printf("\n1 - Ler XML\n");
       printf("2 - Ler JSON\n");
-      printf("Ecolha uma opcoao: ");
+      printf("Ecolha uma opcao: ");
       scanf("%d", &opt);
       switch(opt) {
          case 1:
             parse_xml();
          break;
          case 2:
+            parse_json();
          break;
          default:
          break;
