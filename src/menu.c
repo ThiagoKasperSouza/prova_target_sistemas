@@ -1,7 +1,7 @@
 #include "./exercises.c"
 
 int show_menu() {
-  int escolha = -1;
+  char escolha;
   double arr[] = {67836.43, 36678.66, 29229.88, 27165.48, 19849.53};
   do {
     printf("\n==============================================");
@@ -14,9 +14,9 @@ int show_menu() {
     printf("0 - Sair\n");
 
     printf("\nEscolha um exercicio: ");
-    scanf("%d", &escolha);
-
-    switch(escolha) {
+    scanf("%s%*c", &escolha);
+    int teste =  atoi(&escolha);
+    switch(teste) {
       case 1:
         find_sum_loop();
         break;
