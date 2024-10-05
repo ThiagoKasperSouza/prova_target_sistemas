@@ -1,0 +1,28 @@
+Processo seletivo Target Sistemas 
+
+Autor: Thiago Kasper de Souza, 2024.
+
+Dependências:
+c-json - https://github.com/json-c/json-c
+libxml2 -
+
+principais prompts usados: 
+
+- https://www.blackbox.ai/share/59b646ec-d530-408e-9052-04d6592ed73e
+
+- https://www.blackbox.ai/share/695954cc-3113-47d5-bfda-e8b439af85d2
+
+
+Preparação de ambiente:
+
+sudo apt-get install lixml2-dev libhiredis-dev
+
+Para compilar:
+gcc $(pkg-config --cflags libxml2) -o out.exe main.c $(pkg-config --libs libxml2)
+
+Para rodar (dev): 
+
+executar out.exe
+
+Instalar:
+chmod 777  ./install_linux.sh & sudo ./install_linux.sh

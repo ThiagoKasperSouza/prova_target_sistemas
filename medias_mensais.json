@@ -1,0 +1,9 @@
+{
+    "medias": [
+        {"state_name": "SP", "value": 67836.43},
+        {"state_name": "RJ", "value": 36678.66},
+        {"state_name": "MG", "value": 29229.88},
+        {"state_name": "ES", "value": 27165.48},
+        {"state_name": "Outros", "value": 19849.53}
+    ]
+}

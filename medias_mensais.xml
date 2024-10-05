@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<averages>
+    <average>
+        <state_name>SP</state_name>
+        <value>67836.43</value>
+    </average>
+    <average>
+        <state_name>RJ</state_name>
+        <value>36678.66</value>
+    </average>
+    <average>
+        <state_name>MG</state_name>
+        <value>29229.88</value>
+    </average>
+    <average>
+        <state_name>ES</state_name>
+        <value>27165.48</value>
+    </average>
+    <average>
+        <state_name>Outros</state_name>
+        <value>19849.53</value>
+    </average>
+</averages>
