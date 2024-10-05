@@ -1,10 +1,10 @@
-Processo seletivo Target Sistemas 
+Target Sistemas - Exercicios do Processo seletivo 
 
 Autor: Thiago Kasper de Souza, 2024.
 
 Dependências:
 c-json - https://github.com/json-c/json-c
-libxml2 -
+libxml2 - https://gitlab.gnome.org/GNOME/libxml2
 
 principais prompts usados: 
 
@@ -15,14 +15,7 @@ principais prompts usados:
 
 Preparação de ambiente:
 
-sudo apt-get install lixml2-dev libhiredis-dev
+sudo apt-get install build-essential libglib2.0-dev lixml2-dev 
 
-Para compilar:
-gcc $(pkg-config --cflags libxml2) -o out.exe main.c $(pkg-config --libs libxml2)
-
-Para rodar (dev): 
-
-executar out.exe
-
-Instalar:
-chmod 777  ./install_linux.sh & sudo ./install_linux.sh
+Para compilar e rodar o script:
+make clean && make && ./main

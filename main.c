@@ -32,6 +32,5 @@
 
 
 int main() {
-  
   return show_menu();
 }

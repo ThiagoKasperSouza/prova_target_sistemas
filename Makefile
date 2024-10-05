@@ -5,8 +5,8 @@ CC=gcc
 SRC_DIR = ./src
 LIB_DIR = ./lib
 
-PKG_CFLAGS = $(shell pkg-config --cflags libxml-2.0) -lm
-PKG_LIBS = $(shell pkg-config --libs libxml-2.0) -lm
+PKG_CFLAGS = $(shell pkg-config --cflags libxml-2.0) -lm 
+PKG_LIBS = $(shell pkg-config --libs libxml-2.0) -lm 
 
 $(PROJECT_NAME): main
 
