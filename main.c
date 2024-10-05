@@ -27,6 +27,9 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
+
+ http://www.adampetersen.se/Patterns%20in%20C%205,%20REACTOR.pdf
+ https://pt.stackoverflow.com/questions/59981/design-patterns-em-c
  */
 
 
